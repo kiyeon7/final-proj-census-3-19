@@ -51,10 +51,24 @@ ggsave("map_2.png", map_2)
 
 
 # Unrelated Example ways to pull data 
-# v17 <- load_variables(2017, "acs5", cache = TRUE)
-# View(v17)
+# https://walker-data.com/tidycensus/articles/basic-usage.html#searching-for-variables 
+
+# View most recent ACS data
+v19 <- load_variables(2019, "acs5", cache = TRUE)
+View(v19)
 # 
 # age10 <- get_decennial(geography = "state", 
 #                        variables = "P013001", 
 #                        year = 2010)
 # head(age10)
+
+
+# View all census data
+dec <- load_variables(2010, "sf1", cache = TRUE)
+view(dec)
+
+# View specific census variable data
+example <- get_decennial(geography = "state", 
+                         year = 2010,
+                         variables = "P001001")
+view(example)
