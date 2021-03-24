@@ -5,6 +5,7 @@ racevars <- c(White = "B02001_002",
               Black = "B02001_003", 
               Asian = "B02001_005",
               Hispanic = "B03003_003")
+
 harris <- get_acs(geography = "tract",
                   variables = racevars, 
                   year = 2018,
@@ -47,3 +48,13 @@ map_2 <- fairfax %>%
 
 ggsave("map_2.png", map_2)
 
+
+
+# Unrelated Example ways to pull data 
+# v17 <- load_variables(2017, "acs5", cache = TRUE)
+# View(v17)
+# 
+# age10 <- get_decennial(geography = "state", 
+#                        variables = "P013001", 
+#                        year = 2010)
+# head(age10)
